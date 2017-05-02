@@ -7,7 +7,7 @@
  */
 namespace ShoppingCart\Hydrator;
 
-use Zend\Stdlib\Hydrator\ClassMethods;
+use Zend\Hydrator\ClassMethods;
 
 class ShoppingCartHydrator extends ClassMethods
 {
