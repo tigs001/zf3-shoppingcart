@@ -8,7 +8,7 @@ return array(
     ),
     'controller_plugins' => array (
         'factories' => array (
-            'ShoppingCart' => 'ShoppingCart\Factory\ShoppingCartFactory'
+            'ShoppingCart\Controller\Plugin\ShoppingCart::class' => 'ShoppingCart\Factory\ShoppingCartFactory:class'
         )
     )
 );
