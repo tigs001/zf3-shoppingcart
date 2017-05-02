@@ -1,4 +1,5 @@
 <?php
+namespace ShoppingCart;
 
 return array(
     'router' => array(
@@ -8,7 +9,7 @@ return array(
     ),
     'controller_plugins' => array (
         'factories' => array (
-            'ShoppingCart\Controller\Plugin\ShoppingCart::class' => 'ShoppingCart\Factory\ShoppingCartFactory:class'
+            'Controller\Plugin\ShoppingCart::class' => 'Factory\ShoppingCartFactory:class'
         )
     )
 );
