@@ -18,7 +18,7 @@ Add this project in your composer.json:
 
 
     "require": {
-        "simpavl/zf3shoppingCart": "dev-master"
+        "simpavl/zf3-shoppingcart": "dev-master"
     }
     
 
