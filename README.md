@@ -7,6 +7,9 @@ Inspired by
 ------------
 I was inspired to create the ShoppingCart by great job of Vincenzo Provenza and Concetto Vecchio (http://github.com/vikey89/ZendCart). Keeped the same idea behind but made it more flexible, easier to extend and simplier to change.
 
+Zend Framework 3
+------------
+This module was forked and repaired for zf3
 
 Installation
 ------------
@@ -15,7 +18,7 @@ Add this project in your composer.json:
 
 
     "require": {
-        "cyrkulewski/shopping-cart": "dev-master"
+        "simpavl/zf3shoppingCart": "dev-master"
     }
     
 
