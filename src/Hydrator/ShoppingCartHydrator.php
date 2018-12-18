@@ -7,25 +7,25 @@
  */
 namespace ShoppingCart\Hydrator;
 
-use Zend\Hydrator\ClassMethods;
+use Zend\Hydrator\ClassMethodsHydrator;
 
-class ShoppingCartHydrator extends ClassMethods
+class ShoppingCartHydrator extends ClassMethodsHydrator
 {
 
 
     /**
      * Extract values from an object
      *
-     * @param object $object 
+     * @param object $object
      * @return array
      * @throws \Exception
      */
-    public function extract($object)
+    public function extract(object $object) : array
     {
         if (! in_array('ShoppingCart\Entity\ShoppingCartEntityInterface', class_implements($object))) {
             throw new \Exception('$object must implement ShoppingCart\Entity\ShoppingCartEntityInterface');
         }
-        
+
         $data = parent::extract($object);
         return $data;
     }
@@ -34,8 +34,8 @@ class ShoppingCartHydrator extends ClassMethods
     /**
      * Hydrate $object with the provided $data.
      *
-     * @param array $data 
-     * @param object $object 
+     * @param array $data
+     * @param object $object
      * @return object
      * @throws \Exception
      */

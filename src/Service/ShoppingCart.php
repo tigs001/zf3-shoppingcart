@@ -1,62 +1,18 @@
 <?php
 /**
- * ShoppingCart Plugin
+ * ShoppingCart Service
  * Provides basic functionality of Shopping Cart.
  *
  * @package ShoppingCart
  * @subpackage Plugin
  * @author Aleksander Cyrkulewski
  */
-namespace ShoppingCart\Controller\Plugin;
 
-use Zend\Mvc\Controller\Plugin\AbstractPlugin;
+namespace ShoppingCart\Service;
 
-class ShoppingCart extends AbstractPlugin
+
+class ShoppingCart
 {
-
-
-
-	/**
-	 * The service manager
-	 *
-	 * @var \Zend\ServiceManager\ServiceManager
-	 */
-	protected $serviceManager;
-
-
-
-	/**
-	 * __construct() - The constructor.
-	 *
-	 * @param \Zend\ServiceManager\ServiceManager $sm - The service manager
-	 *
-	 * @return void
-	 */
-   	public function __construct($sm)
-    {
-   		/*
-   		 *
-   		 */
-
-        $this->serviceManager 		= $sm;
-    }
-
-
-
-    /**
-     * __invoke()
-     *
-     * @param string $searchstr - The search string.
-     *
-     * @return array - Of results or string error messages.
-     */
-    public function __invoke($searchstr)
-    {
-        /*
-         * Get the configuration.
-
-
-
 
     /**
      * @var Zend\Session\Container
