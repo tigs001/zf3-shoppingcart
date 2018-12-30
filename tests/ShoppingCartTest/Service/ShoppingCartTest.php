@@ -127,6 +127,33 @@ class ShoppingCartTest extends \PHPUnit\Framework\TestCase
 
 
 	/**
+	 * testTotalSumWithVat() - Tests the total sum feature with VAT added.
+	 *
+	 * The default VAT is set to 25%.
+	 */
+	public function testTotalSumWithVat()
+	{
+		/*
+		 * The amount should be:
+		 *    1 * $15.15
+		 *    1 * $15.15
+		 *    3 * $19.99
+		 *    ----------
+		 *        $90.37 * 1.25
+		 *
+		 *     = $112.84
+		 */
+		$this->cart->destroy();
+		$result = $this->cart->insert($this->threeproducts);
+		$this->assertTrue($result);
+
+		$sum = $this->cart->total_sum(2, true);
+		$this->assertEquals(112.84, $sum);
+	}
+
+
+
+	/**
 	 *
 	 */
 	public function testTotalItems()
@@ -293,5 +320,82 @@ class ShoppingCartTest extends \PHPUnit\Framework\TestCase
 
 		$this->fail('The expected unconfigured exception was not thrown.');
 	}
+
+
+
+	/**
+	 * testGetView() - Mainly for test coverage.  This functionality would not be used in reality.
+	 */
+	public function testGetView()
+    {
+		/*
+		 * I expect the view to be null during this test.
+		 * It would only be set when being called as a View Helper
+		 */
+		$view = $this->cart->getView();
+		$this->assertNull($view);
+    }
+
+
+
+    /**
+     * testInsertInvalidContent() - Tests that the exception is thrown when we supply an empty array.
+     * It is not longer possible to pass something other than an array with PHP 7 type checking,
+     * so only the empty array needs to be tested.
+     *
+	 * @expectedException \Exception
+     */
+	public function testInsertInvalidContent()
+	{
+		$product = array();
+
+        $result = $this->cart->insert($product);
+
+		$this->fail('The expected only correct values exception was not thrown.');
+	}
+
+
+
+    /**
+     * testInsertInvalidContent2() - Tests that the exception is thrown when we supply an array with one
+     * element as an empty array.
+     *
+	 * @expectedException \Exception
+     */
+	public function testInsertInvalidContent2()
+	{
+		$product = array(array());
+
+        $result = $this->cart->insert($product);
+
+		$this->fail('The expected only correct values exception was not thrown.');
+	}
+
+
+
+    /**
+     * testIsMultidimentionPrivate() - Runs a test of isMultidimention() and passes in
+     * invalid content.  This is probably unnecessary, its only for complete cover coverage.
+     */
+	public function testIsMultidimentionPrivate()
+	{
+		/*
+		 * Use a reflection class to get at the private method.
+		 */
+
+		$reflection = new \ReflectionClass(get_class($this->cart));
+		$method = $reflection->getMethod('isMultidimention');
+		$method->setAccessible(true);
+
+		$product = 'Something';
+
+        $result = $method->invokeArgs($this->cart, array($product));
+
+		$this->assertFalse($result);
+	}
+
+
+
+
 
 }

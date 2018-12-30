@@ -10,7 +10,6 @@
 namespace ShoppingCart\Factory;
 
 use Zend\ServiceManager\Factory\FactoryInterface;
-use Zend\ServiceManager\ServiceLocatorInterface;
 use Interop\Container\ContainerInterface;
 use Zend\Session\Container;
 use ShoppingCart\Service\ShoppingCart;
@@ -33,7 +32,6 @@ class ShoppingCartFactory implements FactoryInterface
      */
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
-        //$allServices = $servicelocator->getServiceLocator();
         $config = $container->get('ServiceManager')->get('Configuration');
 
         if (! isset($config['shopping_cart'])) {

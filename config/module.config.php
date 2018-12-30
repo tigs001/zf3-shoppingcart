@@ -10,7 +10,12 @@ return array(
     ),
     'controller_plugins' => array (
         'factories' => array (
-            Controller\Plugin\ShoppingCart::class => Factory\ShoppingCartFactory::class,
+            'ShoppingCart' => Factory\ShoppingCartPluginFactory::class,
+        ),
+    ),
+    'view_helpers' => array (
+        'factories' => array (
+            'ShoppingCart' => Factory\ShoppingCartViewHelperFactory::class,
         ),
     ),
 	'service_manager' => array(

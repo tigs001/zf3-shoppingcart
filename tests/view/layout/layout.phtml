@@ -1,0 +1,20 @@
+<?php
+
+echo $this->doctype();
+
+echo '<html lang="en">' . PHP_EOL;
+echo '  <head>' . PHP_EOL;
+echo '    <meta charset="utf-8">' . PHP_EOL;
+echo $this->headTitle();
+echo $this->headMeta();
+echo $this->headLink();
+echo $this->headScript();
+echo '  </head>' . PHP_EOL;
+
+
+echo '  <body>' . PHP_EOL;
+echo $this->content;
+echo '  </body>' . PHP_EOL;
+
+echo '</html>' . PHP_EOL;
+

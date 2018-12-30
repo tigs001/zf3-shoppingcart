@@ -5,6 +5,8 @@ namespace ShoppingCart;
 use Zend\Mvc\ModuleRouteListener;
 use Zend\Mvc\MvcEvent;
 
+
+
 class Module
 {
     public function onBootstrap(MvcEvent $e)
@@ -13,6 +15,8 @@ class Module
         $moduleRouteListener = new ModuleRouteListener();
         $moduleRouteListener->attach($eventManager);
     }
+
+
 
     public function getConfig()
     {

@@ -83,6 +83,8 @@ class Bootstrap {
         $modulemanager->loadModules();
     }
 
+
+
     /**
      * @return \Zend\ServiceManager\ServiceManager
      */
@@ -90,12 +92,16 @@ class Bootstrap {
         return static::$serviceManager;
     }
 
+
+
     /**
      * @return array
      */
     public static function getConfig() {
         return static::$config;
     }
+
+
 
     /**
      * Retrieve parent for a given path

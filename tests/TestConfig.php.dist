@@ -1,15 +1,17 @@
 <?php
 return array(
     'modules' => array(
+        'Zend\Router',
         'ShoppingCart',
     ),
     'module_listener_options' => array(
         'config_glob_paths'    => array(
            	__DIR__ . '/../config/{,*.}{global,local}.php',
+           	__DIR__ . '/configuration.php',
         ),
         'module_paths' => array(
             'src',
-            'vendor'
+            'vendor',
         )
     )
 );

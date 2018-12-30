@@ -10,8 +10,12 @@
 
 namespace ShoppingCart\Service;
 
+use Zend\Mvc\Controller\Plugin\AbstractPlugin;
+use Zend\View\Helper\HelperInterface;
+use Zend\View\Renderer\RendererInterface as Renderer;
 
-class ShoppingCart
+
+class ShoppingCart extends AbstractPlugin implements HelperInterface
 {
 
     /**
@@ -33,6 +37,38 @@ class ShoppingCart
      * @var array
      */
     private $config;
+
+
+    /**
+     * View object instance
+     *
+     * @var Renderer
+     */
+    protected $view = null;
+
+    /**
+     * Set the View object
+     *
+     * @param  Renderer $view
+     * @return AbstractHelper
+     */
+    public function setView(Renderer $view)
+    {
+        $this->view = $view;
+        return $this;
+    }
+
+    /**
+     * Get the view object
+     *
+     * @return null|Renderer
+     */
+    public function getView()
+    {
+        return $this->view;
+    }
+
+
 
     /**
      *
