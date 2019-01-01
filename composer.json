@@ -15,7 +15,7 @@
     "homepage" : "https://github.com/simpavl/ZF3ShoppingCart",
     "minimum-stability": "dev",
     "require": {
-        "php": ">=7.0",
+        "php": ">=7.2",
         "zendframework/zend-hydrator": ">=3"
     },
     "require-dev": {
