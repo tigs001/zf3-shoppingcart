@@ -7,9 +7,15 @@
  */
 namespace ShoppingCart\Hydrator;
 
-use Zend\Hydrator\ClassMethodsHydrator;
 
-class ShoppingCartHydrator extends ClassMethodsHydrator
+/*
+ * Currently, we require zendframework/zend-hydrator ^2.4
+ *
+ * This will need to change to support verion >=3.
+ */
+use Zend\Hydrator\ClassMethods;
+
+class ShoppingCartHydrator extends ClassMethods
 {
 
 
@@ -20,7 +26,7 @@ class ShoppingCartHydrator extends ClassMethodsHydrator
      * @return array
      * @throws \Exception
      */
-    public function extract(object $object) : array
+    public function extract($object) : array
     {
         if (! in_array('ShoppingCart\Entity\ShoppingCartEntityInterface', class_implements($object))) {
             throw new \Exception('$object must implement ShoppingCart\Entity\ShoppingCartEntityInterface');
