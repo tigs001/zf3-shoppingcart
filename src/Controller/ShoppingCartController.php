@@ -146,7 +146,6 @@ class ShoppingCartController extends \Zend\Mvc\Controller\AbstractActionControll
 		 */
 		$cart->insert($jdata);
 
-
 		/*
 		 * Return success.
 		 */
